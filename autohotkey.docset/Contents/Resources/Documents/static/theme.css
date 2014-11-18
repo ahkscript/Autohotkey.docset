@@ -306,11 +306,11 @@ ul.jqtree-tree li > .jqtree-element:hover
 	width: 100%;
 }
 #app-body .left-col {
-	width: 231px;
+	width: 15px;
 	float: left;
 }
 #app-body .right-col {
-	margin-left: 231px;
+	margin-left: 15px;
 }
 #main-content {
 	padding-left: 13px;
@@ -318,10 +318,6 @@ ul.jqtree-tree li > .jqtree-element:hover
 	min-height: 230px;
 	max-width: 950px;
 }
-.right-col #main-content {
-	border-left: 1px solid #e5e5e5;
-}
-
 /* Header */
 
 .header {
@@ -453,7 +449,7 @@ clear: both;
     padding: 0;
     list-style: none;
     background-color: #808080;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
 }
 

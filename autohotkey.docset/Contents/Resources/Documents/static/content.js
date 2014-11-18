@@ -5,7 +5,7 @@ if (!IsInsideCHM() && !IsSearchBot())
 }
 
 function GetUrlRoot()
-{ 
+{
   return location.protocol + '//' + location.host + GetVirtualDir();
 }
 
@@ -25,12 +25,10 @@ function GetScriptDir() {
 function BuildStructure()
 {
   var vdir = GetVirtualDir();
-  var header  = '<div class="header"><table class="hdr-table"><tr><td class="hdr-image"><a href="' + vdir + '/' + '"><img src="' + vdir + '/docsets/Autohotkey.docset/Contents/Resources/Documents/static/ahk_logo_no_text.png" width="217" height="70" alt="AutoHotkey"></a></td><td class="hdr-search"></td><td class="hdr-language"></td></tr></table></div>';
-  var main_1  = '<div class="main-content"><div id="app-body"><div id="headerbar"></div><div class="left-col"></div><div class="right-col"><div id="main-content">';
+  var main_1  = '<div class="main-content"><div id="app-body"><div class="left-col"></div><div class="right-col"><div id="main-content">';
   var main_2  = '</div></div><div class="float-clear"></div></div></div>';
-  var footer  = '<div class="footer"><b>Copyright</b> &copy; 2003-' + new Date().getFullYear() + ' ' + location.host + ' - <span id="ftLicense"></span> <a href="' + vdir + '/docsets/Autohotkey.docset/Contents/Resources/Documents/license.htm">GNU General Public License</a><span id="ftExtra"></span></div>';
-  document.write(header + main_1);
-  $(document).ready(function() { $('body').append(main_2 + footer); });
+  document.write(main_1);
+  $(document).ready(function() { $('body').append(main_2); });
 }
 
 function AddContent()
@@ -122,7 +120,7 @@ function AddContent()
 
       if(!$(this).attr('id')) // if id anchor not exist, create one
       {
-        
+
         var str = $(this).text().replace(/\s/g, '_'); // replace spaces with _
         var str = str.replace(/[():.,;'#\[\]\/{}&="|?!]/g, ''); // remove special chars
         if($('#' + str).length) // if new id anchor exist already, set it to a unique one
@@ -169,7 +167,7 @@ function AddContent()
           function CreateData(obj_ul, tree)
           {
             var obj_lis = obj_ul.find("li");
-            if (obj_lis.length == 0) return;        
+            if (obj_lis.length == 0) return;
             obj_lis.each(function(index) {
               var $this = $(this);
               if($this.parent("ul").get(0) == obj_ul.get(0))
@@ -269,7 +267,7 @@ function AddContent()
     }
 
     $("#indexcontainer").html(sessionStorage.getItem('index'));
-    
+
     //
     // pre-select toc sidebar item
     //
@@ -285,24 +283,24 @@ function AddContent()
     $("#IndexEntry").on('keyup', function() {
       var oList = $('#indexcontainer')[0];
       var ListLen = oList.length;
-      var iCurSel = oList.selectedIndex; 
+      var iCurSel = oList.selectedIndex;
       var text = $("#IndexEntry").val().toLowerCase();
       var TextLen = text.length;
       if (!text) return
-      for (var i = 0; i < ListLen; i++) { 
-        var listitem = oList.item(i).text.substr(0, TextLen).toLowerCase(); 
-        if (listitem == text) { 
-          if (i != iCurSel) { 
-            var iPos = i + oList.size - 1; 
-            if(ListLen > iPos) 
-              oList.selectedIndex = iPos; 
-            else 
-              oList.selectedIndex = ListLen-1; 
-            oList.selectedIndex = i; 
-          } 
-          break; 
-        } 
-      } 
+      for (var i = 0; i < ListLen; i++) {
+        var listitem = oList.item(i).text.substr(0, TextLen).toLowerCase();
+        if (listitem == text) {
+          if (i != iCurSel) {
+            var iPos = i + oList.size - 1;
+            if(ListLen > iPos)
+              oList.selectedIndex = iPos;
+            else
+              oList.selectedIndex = ListLen-1;
+            oList.selectedIndex = i;
+          }
+          break;
+        }
+      }
     });
 
     //
