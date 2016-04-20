@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>ahk</string>
+    <key>CFBundleName</key>
+    <string>AutoHotkey</string>
+    <key>DocSetPlatformFamily</key>
+    <string>ahk</string>
+    <key>isDashDocset</key>
+    <true/>
+    <key>isJavaScriptEnabled</key>
+    <true/>
+    <key>dashIndexFilePath</key>
+    <string>AutoHotkey.htm</string>
+    <key>DashDocSetFallbackURL</key>
+    <string>https://autohotkey.com/docs/</string>
+</dict>
+</plist>
